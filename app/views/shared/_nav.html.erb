@@ -1,0 +1,35 @@
+<nav class="md:container md:flex md:mx-auto" data-controller="hamburger" data-hamburger-show-value="false" data-action="resize@window->hamburger#layout">
+  <div class="flex items-center md:mr-auto">
+    <%= link_to root_path, class: "logo ml-auto mr-auto pt-2" do %>
+    <% end %>
+    <button class="p-1 mr-4 md:hidden" data-hamburger-target="button" data-action="click->hamburger#toggleNavBar">
+      <div class="w-7 h-0.5 my-1 bg-black"></div>
+      <div class="w-7 h-0.5 my-2 bg-black"></div>
+      <div class="w-7 h-0.5 my-1 bg-black"></div>
+    </button>
+  </div>
+    
+  <ul class="text-center md:flex md:max-h-full login-area" data-hamburger-target="navbar">
+    <% if current_user && current_user.role == "admin" %>
+    <li>
+      <%= link_to "進入後台", admin_courses_path %>
+    </li>
+    <% end %>
+    <li>
+      <%= link_to "所有課程", "#" %>
+    </li>
+    <li>
+      <%= link_to "我的課程", "#" %>
+    </li>
+    <% if current_user %>
+      <li><%= button_to'登出', destroy_user_session_path, method: "delete"%></li>
+      <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+    <% else %>
+      <li><%= link_to('註冊', new_registration_path(:user)) %></li>
+      <li><%= link_to('登入', new_session_path(:user)) %></li>
+    <% end %>
+
+    </ul>
+  </button>
+  </ul>
+</nav>

@@ -2,14 +2,22 @@
 <html>
   <head>
     <title>Snapask</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="fixed z-50 w-full shadow-md header bg-primary-300 text-primary-100">
+      <%= render "shared/nav" %>
+    </header>
+    <main class="main">
+      <%= render "shared/flash" if flash %>
+      <%= yield %>
+    </main>
   </body>
 </html>
