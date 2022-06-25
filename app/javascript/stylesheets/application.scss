@@ -1,8 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./home";
+@import "./member";
 @import "./nav";
-
+@import "./courses_index";
+@import "./courses_show";
+@import "./owner";
+@import "./owner_sidebar";
 
 // font-family noto sans
 body {

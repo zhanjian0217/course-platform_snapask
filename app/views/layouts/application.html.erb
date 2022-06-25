@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -16,7 +17,9 @@
       <%= render "shared/nav" %>
     </header>
     <main class="main">
-      <%= render "shared/flash" if flash %>
+      <div class="fixed z-40 transform -translate-x-1/2 left-1/2">
+        <%= render "shared/flash" %>
+      </div> 
       <%= yield %>
     </main>
   </body>
