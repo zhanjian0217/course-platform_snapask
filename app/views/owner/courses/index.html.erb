@@ -12,7 +12,7 @@
 		<table class="mt-6 overflow-hidden rounded-md owner-table shadow-md">
 			<thead class="owner-thead">
 				<tr>
-					<th class="text-left owner-text">課程名稱</th>
+					<th class="text-left owner-text">課程主題</th>
 					<th class="text-center owner-text">售價</th>
 					<th class="text-center owner-text">授課數</th>
 					<th class="text-center owner-text">課程效期</th>
@@ -25,7 +25,7 @@
 						<td class="text-left owner-text text-primary-500">
 							<div class="flex items-center">
 								<div class="mr-2">
-									<span class="text-lg text-primary underline hover:text-primary-200"><%= link_to course.title, information_owner_course_path(course) %></span>
+									<span class="text-lg text-primary underline hover:text-primary-200"><%= link_to course.title, edit_owner_course_path(course) %></span>
 								</div>
 							</div>
 						</td>

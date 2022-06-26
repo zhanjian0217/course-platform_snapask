@@ -10,7 +10,7 @@
     <div class="p-8 bg-white border-2 border-gray-300 border-dashed rounded ">
 
       <div class="flex items-center mb-4">
-        <%= form.label :title, "課程標題", class: "flex-shrink-0 mr-4" %>
+        <%= form.label :title, "課程主題", class: "flex-shrink-0 mr-4" %>
         <%= form.text_field :title %>
       </div>
       <div class="flex items-center mb-4">
@@ -25,7 +25,7 @@
         <div class="flex flex-wrap md:w-1/2 md:ml-2">
           <div class="flex items-center w-full mb-4">
             <%= form.label :published, "課程狀態", class: "flex-shrink-0 mr-4" %>
-            <%= form.select :published, options_for_select(Course.published_state),{include_blank: "選擇您的課程狀態"} %>
+            <%= form.select :published, options_for_select(Course.published_state) %>
           </div>
           <div class="flex items-center w-full mb-4">
             <%= form.label :price, "課程售價", class: "flex-shrink-0 mr-4" %>

@@ -1,14 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'pages#index'
+  root to: 'courses#index'
   devise_for :users
   # back stage
   namespace :owner do
-    resources :courses do
-      member do
-        get :information
-      end
+    resources :courses, except: [:show] do
     end
     resources :orders, only: [:index] do 
     end
@@ -16,10 +13,7 @@ Rails.application.routes.draw do
 
   # front stage
   resources :courses, only: %i[index show]do
-    resources :orders, only: [] do
-      collection do
-        get :payment
-      end
+    resources :orders, only: [:new] do
     end
   end
 

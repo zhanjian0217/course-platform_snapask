@@ -71,11 +71,11 @@
 }
 
 .tag-publish {
-  @apply text-white bg-rice;
+  @apply text-white bg-primary-300;
 }
 
 .tag-draft {
-  @apply text-white bg-draft;
+  @apply text-white bg-red-500;
 }
 
 .tag-safe {

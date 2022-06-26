@@ -33,14 +33,12 @@ module Owner
       end
     end
 
-    def show; end
     def destroy
       @course.destroy
       redirect_to owner_courses_path, alert: "刪除成功！"
     end
 
 
-    def comments; end
 
     private
 

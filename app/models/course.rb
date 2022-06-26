@@ -8,6 +8,18 @@ class Course < ApplicationRecord
   # relationship
   belongs_to :user
 
+  # callback
+  after_find do |course|
+    end_time = course.end_time
+    if end_time && end_time < Date.current
+      course.update(published: "draft")
+    end
+  end
+
+  # scope
+  scope :published, -> { where(published: "publish") }
+
+
   def self.published_state
     [
       %w[
