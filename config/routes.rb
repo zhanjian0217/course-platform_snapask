@@ -13,14 +13,11 @@ Rails.application.routes.draw do
 
   # front stage
   resources :courses, only: %i[index show]do
-    resources :orders, only: [:new] do
+    resources :orders, only: [:new, :create] do
     end
   end
 
-  resources :orders, only: [:index, :show] do
-    collection do
-      post :payment_response
-    end
+  resources :orders, only: [:index] do
   end
 
 end

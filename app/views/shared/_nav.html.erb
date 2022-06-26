@@ -1,6 +1,7 @@
 <nav class="md:container md:flex md:mx-auto" data-controller="hamburger" data-hamburger-show-value="false" data-action="resize@window->hamburger#layout">
-  <div class="flex items-center md:mr-auto">
-    <%= link_to root_path, class: "logo ml-auto mr-auto pt-2" do %>
+  <div class="flex items-center md:mr-auto ">
+    <%= link_to root_path, class: "logo ml-auto mr-auto flex items-center" do %>
+      首頁 / 所有課程
     <% end %>
     <button class="p-1 mr-4 md:hidden" data-hamburger-target="button" data-action="click->hamburger#toggleNavBar">
       <div class="w-7 h-0.5 my-1 bg-black"></div>
@@ -16,7 +17,7 @@
     </li>
     <% end %>
     <li>
-      <%= link_to "我的課程", "#" %>
+      <%= link_to "我的課程", orders_path %>
     </li>
     <% if current_user %>
       <li><%= link_to '登出', destroy_user_session_path, method: "delete"%></li>

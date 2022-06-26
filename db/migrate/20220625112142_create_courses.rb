@@ -6,7 +6,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.integer "price"
       t.string "published", default: "draft"
       t.bigint "user_id", null: false  
-      t.datetime "end_time"
+      t.integer "expiration_day"
 
 
       t.timestamps

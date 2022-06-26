@@ -4,27 +4,27 @@
         <div>此課程沒有圖片</div>
     </div>
     <div class="p-6 course-card-main">
-      <h2 class="mb-6 text-2xl font-bold text-center"><%= course.title %></h2>
+      <h2 class="mb-6 text-2xl font-bold text-center"><%= order.course.title %></h2>
       <div class="flex items-center justify-between p-3">
-        <div><%= course.content %></div>
-        <div class=" text-primary-300">課程效期：<%= course.expiration_day %>天</div>
+        <div><%= order.course.content %></div>
+        <div class=" text-primary-300">課程效期：<%= order.course.expiration_day %>天</div>
       </div>
     </div>
     <div class="flex items-center justify-between p-3">
       <div class="flex items-center">
-        <span class="text-sm">講師：  <%= course.user.username %></span>
+        <span class="text-sm">講師：  <%= order.course.user.username %></span>
       </div>
-      <% if current_user && current_user.bought?(course) %>
+      <% if current_user && current_user.bought?(order.course) %>
       <span class="text-warning-100">
         已購買
-        <%= current_user.expired?(course)%>到期
+        <%= current_user.expired?(order.course)%>到期
       </span>
       <% else %>
       <span class="text-warning-100">
-        售價：<%= course.price.zero? ? "Free" : "$ #{course.price}" %>
+        售價：<%= order.course.price.zero? ? "Free" : "$ #{order.course.price}" %>
       </span>
       <button class="p-2 bg-blue-200 border rounded-md text-primary-300 border-primary-200 course-card-hover">
-        <%= link_to "購買", new_course_order_path(course) %>
+        <%= link_to "購買", new_course_order_path(order.course) %>
       </button>
       <% end %>
     </div>

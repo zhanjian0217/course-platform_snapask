@@ -16,6 +16,7 @@ gem 'devise', '~> 4.2'
 gem 'devise-i18n', '~> 1.10', '>= 1.10.2'
 gem 'figaro', '~> 1.2'
 gem 'webpacker', '~> 5.0'
+gem 'aasm', '~> 5.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

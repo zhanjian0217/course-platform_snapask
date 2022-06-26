@@ -2,6 +2,6 @@
 
 class CoursesController < ApplicationController
   def index
-    @courses = Course.published
+    @courses = Course.includes(:orders, :user).published
   end
 end

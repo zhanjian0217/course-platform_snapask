@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 module Owner
-  class CoursesController < ApplicationController
+  class CoursesController < Owner::BaseController
     layout "owner"
     before_action :find_course, only:[:update, :destroy, :edit, :information]
     before_action :authenticate_user!
@@ -47,7 +48,7 @@ module Owner
     end
 
     def course_params
-      params.require(:course).permit(:title, :end_time, :content, :price, :published)
+      params.require(:course).permit(:title, :expiration_day, :content, :price, :published)
     end
   end
 end
