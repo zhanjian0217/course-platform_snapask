@@ -2,6 +2,7 @@
 
 class CoursesController < ApplicationController
   def index
-    @courses = Course.includes(:orders, :user).published
+    @courses = Course.includes(:user).published
+    orders = Order.all
   end
 end

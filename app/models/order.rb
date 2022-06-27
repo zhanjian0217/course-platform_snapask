@@ -11,7 +11,7 @@ class Order < ApplicationRecord
     end
 
     event :renew do
-      transitions from: [:paid], to: :expired
+      transitions from: [:paid, :expired], to: :expired
     end
 
   end

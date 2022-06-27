@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # relationship
   has_many :courses
   has_many :orders
+  has_many :bought_courses, through: :orders, source: :course
 
 
   def bought?(course)
