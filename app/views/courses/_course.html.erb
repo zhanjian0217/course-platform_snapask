@@ -23,9 +23,7 @@
       <span class="text-warning-100">
         售價：<%= course.price.zero? ? "Free" : "$ #{course.price}" %>
       </span>
-      <button class="p-2 bg-blue-200 border rounded-md text-primary-300 border-primary-200 course-card-hover">
-        <%= link_to "購買", new_course_order_path(course) %>
-      </button>
+      <%= link_to "購買", new_course_order_path(course), class: "p-2 bg-blue-200 border rounded-md text-primary-300 border-primary-200 course-card-hover" %>
       <% end %>
     </div>
   </div>

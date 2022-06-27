@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   before_action :check, only: [:new, :create]
 
   def index
-    @orders = Order.includes(:user, :course).where(user: current_user)
+    @orders = Order.includes(:user, :course).where(user: current_user, status: "paid")
   end
 
   def new; end
@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.new(name: @course.title, price: @course.price, slug: SecureRandom.base64(5), course: @course, expiration_day: @course.expiration_day)
     @order.save
     @order.pay!
-    redirect_to root_path, notice: "購買成功!!!!!"
+    redirect_to orders_path, notice: "購買成功!!!!!"
   end
 
   private
